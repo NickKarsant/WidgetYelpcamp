@@ -1,0 +1,62 @@
+<% layout('layouts/boilerplate')%>
+<div class="top ui one column stackable center aligned page grid mt-2">
+  <div id="add" class="column twelve wide card shadow">
+    
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-10 offset-1">
+      <form action="/yelpcamp/campgrounds" method="POST" novalidate class="validated-form"
+        enctype="multipart/form-data">
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Title" name="campground[title]" required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please include the campsite name</div>
+        </div>
+
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="City and State" name="campground[location]" required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Where is it located?</div>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="text" name="campground[price]" class="form-control" aria-label="Amount (to the nearest dollar)"
+            required>
+            <span class="input-group-text">.00</span>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Can you at least estimate a price?</div>
+          <div class="input-group-append">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <textarea class="form-control" type="text" placeholder="Description" id="description"
+            name="campground[description]" required></textarea>
+          <div class="valid-feedback">Looks good</div>
+          <div class="invalid-feedback">Mind telling us a little something about this campsite?</div>
+        </div>
+
+        <div class="mb-3">
+          <input id="add-image" class="form-control" type="file" name="image" multiple required>
+          <div class="valid-feedback">Fantastic!</div>
+          <div class="invalid-feedback">Please include at least one picture</div>
+        </div>
+
+        <div class="ui coulmn center aligned page grid">
+          <div class="column eight wide">
+            <div class="mb-3">
+              <button class="btn btn-block btn-primary ">Add Campground</button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<a href="/yelpcamp/campgrounds"><button class="mb-3 btn btn-md btn-success">All Campgrounds</button></a>
